@@ -6,7 +6,7 @@
 //
 
 import UIKit.UIImage
-import UIKit.UIActivityIndicator
+import UIKit.UIActivityIndicatorView
 
 class CustomImageView: UIImageView {
     

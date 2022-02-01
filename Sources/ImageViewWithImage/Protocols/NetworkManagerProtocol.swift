@@ -13,4 +13,5 @@ public protocol NetworkProvider {
 
 public protocol URLProvider {
     var urlToDownload: URL { get set }
+    init(urlToDownload: URL)
 }

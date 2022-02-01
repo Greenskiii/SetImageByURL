@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class LocalFileManager {
+class LocalFileManager {
     
     var file: String
     var fileURL: URL

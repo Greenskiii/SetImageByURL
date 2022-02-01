@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class CacheManager {
+class CacheManager {
     
     lazy var imagesCache: NSCache<NSString, NSData> = {
         return NSCache<NSString, NSData>()

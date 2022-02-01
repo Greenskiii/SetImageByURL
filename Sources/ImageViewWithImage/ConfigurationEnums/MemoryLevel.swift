@@ -5,7 +5,7 @@
 //  Created by Oleksii Danevych on 1/26/22.
 //
 
-public enum MemoryLevel {
+enum MemoryLevel {
     case cacheMemory
     case localMemory
 }

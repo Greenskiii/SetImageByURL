@@ -8,9 +8,9 @@ import Foundation
 
 public struct LoadManager {
     
-    var urlToDownload: URL
+    public var urlToDownload: URL
     
-    func startLoad(complition: @escaping (Data?, Error?) -> Void) {
+    public func startLoad(complition: @escaping (Data?, Error?) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: urlToDownload) { data, response, error in
             if let error = error {
                 complition(nil, error)

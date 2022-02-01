@@ -9,10 +9,11 @@ import UIKit.UIImage
 import UIKit.UIActivityIndicatorView
 import Foundation
 
-public typealias NetworkManager = NetworkProvider & URLProvider
 
 public class ImageViewWithImage: UIImageView {
     
+    public typealias NetworkManager = NetworkProvider & URLProvider
+
     @Published var activityView = UIActivityIndicatorView(style: .large)
     @Published var localFileManager: LocalFileManager
     @Published var loadManager: NetworkManager

@@ -13,12 +13,12 @@ public class ImageViewWithImage: UIImageView {
     
     @Published var activityView = UIActivityIndicatorView(style: .large)
     @Published var localFileManager: LocalFileManager
-    @Published var loadManager: (NetworkProvider & URLProvider)
+    @Published var loadManager: LoadManager
     @Published var imageConfiguration: ImageConfiguration
     @Published var memoryLevel: MemoryLevel
     @Published var imageKey: String
     
-    public init(loadManager: (NetworkProvider & URLProvider),
+    public init(loadManager: LoadManager,
          imageConfiguration: ImageConfiguration = .square,
          memoryLevel: MemoryLevel = .cacheMemory) {
         self.loadManager = loadManager

@@ -9,9 +9,7 @@ import Foundation
 public struct LoadManager: NetworkProvider, URLProvider {
     
     public var urlToDownload: URL
-    public init(urlToDownload: URL) {
-        self.urlToDownload = urlToDownload
-    }
+    
     public func startLoad(complition: @escaping (Data?, Error?) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: urlToDownload) { data, response, error in
             if let error = error {

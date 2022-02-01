@@ -11,7 +11,7 @@ import Foundation
 
 typealias NetworkManager = NetworkProvider & URLProvider
 
-class ImageViewWithImage: UIImageView {
+public class ImageViewWithImage: UIImageView {
     
     var activityView = UIActivityIndicatorView(style: .large)
     let localFileManager: LocalFileManager
@@ -20,7 +20,7 @@ class ImageViewWithImage: UIImageView {
     var memoryLevel: MemoryLevel
     let imageKey: String
     
-    init(loadManager: NetworkManager,
+    public init(loadManager: NetworkManager,
          imageConfiguration: ImageConfiguration = .square,
          memoryLevel: MemoryLevel = .cacheMemory) {
         self.loadManager = loadManager
@@ -35,7 +35,7 @@ class ImageViewWithImage: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func loadImage() {
+    public func loadImage() {
         var imageData: Data?
         
         switch memoryLevel {
@@ -68,7 +68,7 @@ class ImageViewWithImage: UIImageView {
         }
     }
     
-    func clearMemory() {
+    public func clearMemory() {
         CacheManager.shared.clearCache()
         localFileManager.deleteData()
     }

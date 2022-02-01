@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct LoadManager: NetworkProvider, URLProvider {
+public struct LoadManager: NetworkProvider, URLProvider {
     
     var urlToDownload: URL
     

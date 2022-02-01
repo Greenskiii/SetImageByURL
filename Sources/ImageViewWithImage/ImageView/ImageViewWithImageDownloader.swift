@@ -9,7 +9,7 @@ import UIKit.UIImage
 import UIKit.UIActivityIndicatorView
 import Foundation
 
-typealias NetworkManager = NetworkProvider & URLProvider
+public typealias NetworkManager = NetworkProvider & URLProvider
 
 public class ImageViewWithImage: UIImageView {
     

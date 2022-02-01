@@ -13,12 +13,12 @@ typealias NetworkManager = NetworkProvider & URLProvider
 
 public class ImageViewWithImage: UIImageView {
     
-    var activityView = UIActivityIndicatorView(style: .large)
-    let localFileManager: LocalFileManager
-    let loadManager: NetworkManager
-    var imageConfiguration: ImageConfiguration
-    var memoryLevel: MemoryLevel
-    let imageKey: String
+    @Published var activityView = UIActivityIndicatorView(style: .large)
+    @Published let localFileManager: LocalFileManager
+    @Published let loadManager: NetworkManager
+    @Published var imageConfiguration: ImageConfiguration
+    @Published var memoryLevel: MemoryLevel
+    @Published let imageKey: String
     
     public init(loadManager: NetworkManager,
          imageConfiguration: ImageConfiguration = .square,

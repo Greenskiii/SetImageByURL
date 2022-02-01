@@ -27,8 +27,9 @@ public class ImageViewWithImage: UIImageView {
         self.imageConfiguration = imageConfiguration
         self.memoryLevel = memoryLevel
         imageKey = loadManager.urlToDownload.absoluteString
-        self.localFileManager = LocalFileManager(file: imageKey)
         super.init(frame: .zero)
+        self.localFileManager = LocalFileManager(file: imageKey)
+
     }
     
     public required init?(coder: NSCoder) {

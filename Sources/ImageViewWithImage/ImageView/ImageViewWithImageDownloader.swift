@@ -36,36 +36,25 @@ public class ImageViewWithImage: UIImageView {
     }
     
     public func loadImage() {
-        var imageData: Data?
-        
-        switch memoryLevel {
-        case .localMemory:
-            if let data = localFileManager.getData() {
-                imageData = data
-            }
-        case .cacheMemory:
-            if let data = CacheManager.shared.getData(key: self.imageKey) {
-                imageData = data
-            }
-        }
-        
-        if imageData != nil {
-            showActivityIndicator()
-            loadManager.startLoad { data, error in
-                self.hideActivityIndicator()
-                DispatchQueue.main.async {
-                    if let data = data {
-                        self.addImage(data: data, imageConfiguration: self.imageConfiguration)
-                        let imageData = self.image?.pngData()
-                        self.saveImage(memoryLevel: self.memoryLevel, data: imageData ?? data as Data)
+        guard let data = CacheManager.shared.getData(key: self.imageKey) else {
+            guard let data = localFileManager.getData() else {
+                showActivityIndicator()
+                loadManager.startLoad { data, error in
+                    self.hideActivityIndicator()
+                    DispatchQueue.main.async {
+                        if let data = data {
+                            self.addImage(data: data, imageConfiguration: self.imageConfiguration)
+                            let imageData = self.image?.pngData()
+                            self.saveImage(memoryLevel: self.memoryLevel, data: imageData ?? data as Data)
+                        }
                     }
                 }
+                return
             }
-        } else {
-            if let data = imageData {
-                setImage(data: data)
-            }
+            setImage(data: data)
+            return
         }
+        setImage(data: data)
     }
     
     public func clearMemory() {

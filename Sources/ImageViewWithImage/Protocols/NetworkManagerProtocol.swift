@@ -8,10 +8,10 @@
 import Foundation
 
 public protocol NetworkProvider {
-    func startLoad(complition: @escaping (Data?, Error?) -> Void)
+    public func startLoad(complition: @escaping (Data?, Error?) -> Void)
 }
 
 public protocol URLProvider {
-    var urlToDownload: URL { get set }
-    init(urlToDownload: URL)
+    public var urlToDownload: URL { get set }
+    public init(urlToDownload: URL)
 }

@@ -9,19 +9,19 @@ import UIKit.UIImage
 import UIKit.UIActivityIndicatorView
 import Foundation
 
-public typealias NetworkManager = NetworkProvider & URLProvider
+//public typealias NetworkManager = NetworkProvider & URLProvider
 
 public class ImageViewWithImage: UIImageView {
     
     
     @Published var activityView = UIActivityIndicatorView(style: .large)
     @Published var localFileManager: LocalFileManager
-    let loadManager: NetworkManager
+    let loadManager: LoadManager
     let imageConfiguration: ImageConfiguration
     let memoryLevel: MemoryLevel
     let imageKey: String
     
-    public init(loadManager: NetworkManager,
+    public init(loadManager: LoadManager,
                 imageConfiguration: ImageConfiguration = .square,
                 memoryLevel: MemoryLevel = .cacheMemory) {
         self.loadManager = loadManager

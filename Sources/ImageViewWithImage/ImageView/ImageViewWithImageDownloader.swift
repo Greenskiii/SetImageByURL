@@ -15,7 +15,7 @@ public class ImageViewWithImage: UIImageView {
     
     
     @Published var activityView = UIActivityIndicatorView(style: .large)
-    let localFileManager: LocalFileManager
+    @Published var localFileManager: LocalFileManager
     let loadManager: NetworkManager
     let imageConfiguration: ImageConfiguration
     let memoryLevel: MemoryLevel

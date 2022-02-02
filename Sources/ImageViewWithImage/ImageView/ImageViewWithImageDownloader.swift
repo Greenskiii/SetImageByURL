@@ -21,7 +21,7 @@ public class ImageViewWithImage: UIImageView {
     public var memoryLevel: MemoryLevel
     let imageKey: String
     
-    public init(loadManager: NetworkManager,
+    public init(loadManager: LoadManager,
                 imageConfiguration: ImageConfiguration = .square,
                 memoryLevel: MemoryLevel = .cacheMemory) {
         self.loadManager = loadManager

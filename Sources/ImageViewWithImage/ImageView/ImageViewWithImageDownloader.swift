@@ -13,17 +13,17 @@ public typealias NetworkManager = NetworkProvider & URLProvider
 
 public class ImageViewWithImage: UIImageView {
     
-
+    
     @Published var activityView = UIActivityIndicatorView(style: .large)
-    @Published var localFileManager: LocalFileManager
-    @Published var loadManager: NetworkManager
-    @Published var imageConfiguration: ImageConfiguration
-    @Published var memoryLevel: MemoryLevel
-    @Published var imageKey: String
+    let localFileManager: LocalFileManager
+    let loadManager: NetworkManager
+    let imageConfiguration: ImageConfiguration
+    let memoryLevel: MemoryLevel
+    let imageKey: String
     
     public init(loadManager: NetworkManager,
-         imageConfiguration: ImageConfiguration = .square,
-         memoryLevel: MemoryLevel = .cacheMemory) {
+                imageConfiguration: ImageConfiguration = .square,
+                memoryLevel: MemoryLevel = .cacheMemory) {
         self.loadManager = loadManager
         self.imageConfiguration = imageConfiguration
         self.memoryLevel = memoryLevel
@@ -31,7 +31,7 @@ public class ImageViewWithImage: UIImageView {
         self.localFileManager = LocalFileManager(file: "")
         super.init(frame: .zero)
         self.localFileManager = LocalFileManager(file: imageKey)
-
+        
     }
     
     public required init?(coder: NSCoder) {

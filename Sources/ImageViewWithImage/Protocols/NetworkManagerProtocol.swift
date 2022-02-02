@@ -7,11 +7,11 @@
 
 import Foundation
 
-public protocol NetworkProvider {
-    public func startLoad(complition: @escaping (Data?, Error?) -> Void)
+protocol NetworkProvider {
+    func startLoad(complition: @escaping (Data?, Error?) -> Void)
 }
 
-public protocol URLProvider {
-    public var urlToDownload: URL { get set }
-    public init(urlToDownload: URL)
+protocol URLProvider {
+    var urlToDownload: URL { get set }
+    init(urlToDownload: URL)
 }

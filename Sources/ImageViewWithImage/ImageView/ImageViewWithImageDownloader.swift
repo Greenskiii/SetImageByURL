@@ -14,11 +14,11 @@ import Foundation
 public class ImageViewWithImage: UIImageView {
     
     
-    @Published var activityView = UIActivityIndicatorView(style: .large)
-    @Published var localFileManager: LocalFileManager
-    @Published var loadManager: LoadManager
-    @Published var imageConfiguration: ImageConfiguration
-    @Published var memoryLevel: MemoryLevel
+    public var activityView = UIActivityIndicatorView(style: .large)
+    public var localFileManager: LocalFileManager
+    public var loadManager: LoadManager
+    public var imageConfiguration: ImageConfiguration
+    public var memoryLevel: MemoryLevel
     let imageKey: String
     
     public init(loadManager: LoadManager,
@@ -31,7 +31,6 @@ public class ImageViewWithImage: UIImageView {
         self.localFileManager = LocalFileManager(file: "")
         super.init(frame: .zero)
         self.localFileManager = LocalFileManager(file: imageKey)
-        
     }
     
     public required init?(coder: NSCoder) {
